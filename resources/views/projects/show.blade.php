@@ -1,4 +1,5 @@
 @extends('layouts.app')
+{{--@extends('master')--}}
 @section('content')
     <h2>{{ $project->title }}</h2>
     <p><strong>Description:</strong> {{ $project->description }}</p>
