@@ -19,4 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('projects', ProjectController::class);
+//Route::resource('projects', ProjectController::class);
+
+Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/portfolio/add', [ProjectController::class, 'create'])->name('projects.create');
+Route::post('/portfolio', [ProjectController::class, 'store'])->name('projects.store');
+Route::get('/portfolio/{project}', [ProjectController::class, 'show'])->name('projects.show');
+Route::get('/portfolio/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+Route::put('/portfolio/{project}', [ProjectController::class, 'update'])->name('projects.update');
+Route::delete('/portfolio/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
